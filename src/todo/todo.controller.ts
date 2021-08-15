@@ -50,6 +50,7 @@ export class TodoController {
     @Body() createAlbumDto: CreateTodoDto,
   ): Promise<TodoList> {
     const todo = await this.todoService.findOne(id);
+    todo.userId = createAlbumDto.userId;
     todo.title = createAlbumDto.title;
     todo.subtitle = createAlbumDto.subtitle;
     return await this.todoService.createOrUpdate(todo);
@@ -59,5 +60,10 @@ export class TodoController {
   async deleteAlbum(@Param('id') id: number): Promise<any> {
     await this.todoService.delete(id);
     return { success: true };
+  }
+
+  @Get('getbyuserid/:userId')
+  async getByUserId(@Param('userId') userId: string) {
+    return await this.todoService.findByUserId(userId);
   }
 }

@@ -116,7 +116,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"title\": 77777,\r\n\t\"subtitle\": 555\r\n}",
+					"raw": "{\r\n    \"userId\": 2,\r\n\t\"title\": 77777,\r\n\t\"subtitle\": 555\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -124,7 +124,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3300/todo/update/3",
+					"raw": "http://localhost:3300/todo/update/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -133,7 +133,28 @@
 					"path": [
 						"todo",
 						"update",
-						"3"
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Todo by userId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3300/todo/getbyuserid/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"todo",
+						"getbyuserid",
+						"2"
 					]
 				}
 			},
