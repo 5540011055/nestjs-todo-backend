@@ -72,8 +72,43 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
-## Config Connect Database
+## Config Connect Database, Postman
 
-Change config connect DB in file .env
+- Change config connect DB in file .env
+- Postman collection json file: ./postman/todo service.postman_collection.json
 
-# nestjs-todo-backend
+## Params
+Add Todo
+http://localhost:3300/todo/post
+```bash
+json param testing
+{
+  "user_id": 1,
+  "title": "a",
+  "subtitle": "abc"
+}
+```
+Delete Todo
+http://localhost:3300/todo/delete/:id
+
+Get Todo list
+http://localhost:3300/todo/get
+
+Get Todo by id
+http://localhost:3300/todo/get/:id
+
+Update Todo by id
+http://localhost:3300/todo/update/:id
+```bash
+json param testing
+{
+  "userId": 2,
+  "title": 88888,
+  "subtitle": 25225
+}
+```
+
+Get Todo list bt userId
+http://localhost:3300/todo/getbyuserid/:userId
+
+
